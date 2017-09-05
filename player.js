@@ -30,6 +30,7 @@ Player.prototype.tick = function() { // what to do for each frame
 
 Player.prototype.draw = function() { // how to draw
     this.tick(); // compute tick changes
-    ctx.fillStyle = "#DF7401"; // player color
+    ctx.fillStyle = 
+'#'+Math.floor(Math.random()*16777215).toString(16);; // player color
     ctx.fillRect(this.x, this.y, 20, 20); // player position
 };

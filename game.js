@@ -16,7 +16,7 @@ window.onload = function () {
     setInterval(function() { // each frame
         clear(); // clear old frame
         me.draw(); // draw Player object (me)
-        if (me.bullets.length > 0) { // any fying bullets?
+        if (me.bullets.length > 0) { // any flying bullets?
             for (b of me.bullets) { // each bullet
                 if (b.x > WIDTH + 10 || b.x < 0 - 10) { // if out of screen
                     // TODO delete this bullet from the array
