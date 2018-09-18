@@ -5,13 +5,13 @@ class Player {
     constructor(x, y, dx, dy, hp, bullets) {
         this.x = x; this.y = y; // initial x,y positions
         this.dx = dx; this.dy = dy; // initial movement speeds on X an Y axis
-        this.hp = hp; // health points - not used yet
+        this.health = hp; // health points - not used yet
         this.bullets = []; // bullets fired by player
         this.ticks = 0; // player age in ticks :))
     }
 
     damage(d) {
-        this.hp -= d;
+        this.health -= d;
     }
 
     tick() { // what to do for each frame
@@ -40,8 +40,7 @@ class Player {
             ctx.fillRect(this.x-5, this.y-5, 3, 3); // player position    
         }
         ctx.fillStyle = "gold";
-        ctx.fillRect(this.x, this.y, 20, 10); // player position
-        ctx.fillText(this.x + " " + this.y, this.x, this.y - 10);
+        ctx.fillRect(this.x, this.y, 20, 10);
     }
 
     manageBullets() {

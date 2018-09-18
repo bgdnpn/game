@@ -1,7 +1,7 @@
 spawnMonsters = function(ticks) {
     if ((ticks % 32 + rand(3)) <= 1) {
         for (let i = 0; i <= 2; i++) {
-            size = [10,20,30][(rand(4))];// + Math.floor(rand()*10);
+            size = [10,20,30][(rand(3))];
             dx = -5 * rand(3);
             m = new Monster(WIDTH + 25*rand(3), 5*rand(HEIGHT) % HEIGHT, size, dx);
             monsters.push(m);
@@ -13,8 +13,8 @@ collisions = function(player,monsters) { // stupid name
     monsters.forEach(function(m) {
         if (m.x == null) {
             monsters.splice(monsters.indexOf(m), 1);
-        } else if (m.x < 0) {
-        	player.hp -= m.size/5;
+        } else if (m.x < 5) {
+        	player.health -= m.size/5;
         	m.nullify();
         } else {
             m.tick();

@@ -18,8 +18,8 @@ window.onload = function () {
     load();
     setInterval(function() { // each frame
         clear(); // clear old frame
-        if (player.hp > 0) {
-            drawHUD(player.hp);
+        if (player.health > 0) {
+            drawHUD(player.health);
             spawnMonsters(ticks);
             player.tick();
             collisions(player, monsters);
