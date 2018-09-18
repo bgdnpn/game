@@ -1,19 +1,29 @@
 // Bullet class
 
-Bullet = function(x, y, direction) {
-    this.x = x;
-    this.y = y;
-    this.dx = direction && west ? -10 : 10;// facing west means shooting west
-                                           // otherwise east (default)
+class Bullet {
+
+	constructor(x, y, direction) {
+	    this.x = x + 25;
+	    this.y = y + 5;
+	    this.dx = direction && west ? -5 : 5;// facing west means shooting west
+	                                           // otherwise east (default)
+	}
+
+	outOfScreen() {
+		this.x > WIDTH;
+	}
+
+	nullify() {
+        this.x = null;
+    }
+
+	draw() {
+	    ctx.fillStyle = "orange";
+	    ctx.fillRect(this.x, this.y, 3, 1);
+	};
+
+	tick() {
+		this.draw();
+    	this.x += this.dx;
+	}
 }
-
-Bullet.prototype.draw = function() {
-    this.tick();
-    ctx.fillStyle = "white";
-    ctx.fillRect(this.x, this.y, 3, 3);
-};
-
-Bullet.prototype.tick = function() {
-    this.x += this.dx;
-}
-

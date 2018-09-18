@@ -7,6 +7,7 @@ FIRE = 32; // Space key
 var east = false, // going east? no
     west = false, // west? no
     north = false, // ...
+    south = false, // ...
     fire = false; // fire? no
 
 keyDownHandler = function(e) { // handle key down events
@@ -20,7 +21,10 @@ keyDownHandler = function(e) { // handle key down events
   if (key == NORTH) {
     north = true;
   };
-  
+  if (key == SOUTH) {
+    south = true;
+  };
+
   if (key == FIRE) {
     fire = true;
   }
@@ -36,6 +40,9 @@ keysUpHandler = function (e) { // handle key up events
   }
   if (key == NORTH) {
     north = false;
+  }
+  if (key == SOUTH) {
+    south = false;
   }
   
   if (key = FIRE) {
