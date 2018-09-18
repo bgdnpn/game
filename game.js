@@ -19,11 +19,11 @@ window.onload = function () {
     setInterval(function() { // each frame
         clear(); // clear old frame
         if (player.hp > 0) {
-            player.tick(); // draw Player object (me)
-            spawnMonsters(ticks);
-            collisions(player, monsters);
             drawHUD(player.hp);
-            ticks += 1;
+            spawnMonsters(ticks);
+            player.tick();
+            collisions(player, monsters);
+            ticks+=1;
         } else {
             gameOver();
         }

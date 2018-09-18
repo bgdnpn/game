@@ -13,8 +13,8 @@ collisions = function(player,monsters) { // stupid name
     monsters.forEach(function(m) {
         if (m.x == null) {
             monsters.splice(monsters.indexOf(m), 1);
-        } else if (m.x < -25) {
-        	player.hp -= m.size/10;
+        } else if (m.x < 0) {
+        	player.hp -= m.size/5;
         	m.nullify();
         } else {
             m.tick();
