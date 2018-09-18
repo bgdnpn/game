@@ -14,7 +14,7 @@ collisions = function(player,monsters) { // stupid name
         if (m.x == null) {
             monsters.splice(monsters.indexOf(m), 1);
         } else if (m.x < -25) {
-        	player.hp -= m.size;
+        	player.hp -= m.size/10;
         	m.nullify();
         } else {
             m.tick();
