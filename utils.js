@@ -46,7 +46,7 @@ drawHUD = function(hp) {
 gameOver = function() {
     ctx.fillStyle = "red";
     ctx.fillText("GAME OVER", WIDTH/2 - 50 , HEIGHT/2);
-    ctx.fillText("Your score was: " + score, WIDTH/2 - 115 , 30 + HEIGHT/2);
+    ctx.fillText("Your score was: " + score, WIDTH/2 - 105 , 30 + HEIGHT/2);
     ctx.fillText("refresh page to restart", WIDTH/2 - 115 , 60 + HEIGHT/2);
     ctx.fillStyle = "black";
 }

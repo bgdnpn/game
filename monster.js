@@ -15,7 +15,7 @@ class Monster {
     }
 
     draw() {
-        ctx.fillStyle = "#" + 660033;
+        ctx.fillStyle = "#" + rand(999999);
         ctx.fillRect(this.x, this.y, this.size, this.size);
     }
 
