@@ -10,7 +10,7 @@ class Bullet {
 	}
 
 	outOfScreen() {
-		this.x > WIDTH;
+		return this.x > WIDTH;
 	}
 
 	nullify() {

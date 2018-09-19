@@ -45,8 +45,8 @@ class Player {
 
     manageBullets() {
         this.bullets.forEach(function(b) {
-            if (b.outOfScreen() || b.x == null) {
-                player.bullets.shift();
+            if (b.outOfScreen()) {
+                b.nullify();
             } else { // bullet is still on the screen
                 b.tick(); // draw it (at computed position)
             };

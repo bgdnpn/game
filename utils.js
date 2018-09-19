@@ -25,7 +25,9 @@ collisions = function(player,monsters) { // stupid name
             m.nullify();
         };
         player.bullets.forEach(function(b){
-            if ((b.x + 3 >= m.x && b.x <= m.x + m.size) &&
+        	if (b.x == null) {
+        		player.bullets.splice(player.bullets.indexOf(b), 1);
+        	} else if ((b.x + 3 >= m.x && b.x <= m.x + m.size) &&
                 (b.y >= m.y && b.y <= m.y + m.size)) {
                 score += m.size;
                 b.nullify();
