@@ -5,6 +5,7 @@ class Bullet {
 	constructor(x, y, direction) {
 	    this.x = x + 25;
 	    this.y = y + 5;
+	    this.size = 3
 	    this.dx = direction && west ? -5 : 5;// facing west means shooting west
 	                                           // otherwise east (default)
 	}
@@ -19,7 +20,7 @@ class Bullet {
 
 	draw() {
 	    ctx.fillStyle = "orange";
-	    ctx.fillRect(this.x, this.y, 3, 1);
+	    ctx.fillRect(this.x, this.y, 3, 3);
 	};
 
 	tick() {

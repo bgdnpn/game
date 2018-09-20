@@ -19,22 +19,25 @@ collisions = function(player,monsters) { // stupid name
         } else {
             m.tick();
         }
-        if ((player.x + 10 >= m.x && player.x + 10 <= m.x + m.size) &&
-                (player.y + 10 >= m.y &&  player.y <= m.y + m.size)) {
+        if (colliding(player, m)) {
             player.damage(m.size/2);
             m.nullify();
         };
         player.bullets.forEach(function(b){
         	if (b.x == null) {
         		player.bullets.splice(player.bullets.indexOf(b), 1);
-        	} else if ((b.x + 3 >= m.x && b.x <= m.x + m.size) &&
-                (b.y >= m.y && b.y <= m.y + m.size)) {
+        	} else if (colliding(m, b)) {
                 score += m.size;
                 b.nullify();
                 m.nullify();
             }
         });
     });
+}
+
+colliding = function(obj1, obj2) {
+	return (obj1.x + obj1.size >= obj2.x && obj1.x + obj1.size <= obj2.x + obj2.size) &&
+                (obj1.y + obj1.size >= obj2.y &&  obj1.y <= obj2.y + obj2.size);
 }
 
 drawHUD = function(hp) {

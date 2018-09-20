@@ -3,7 +3,9 @@
 class Player {
 
     constructor(x, y, dx, dy, hp, bullets) {
-        this.x = x; this.y = y; // initial x,y positions
+        this.x = x;
+        this.y = y;
+        this.size = 10;
         this.dx = dx; this.dy = dy; // initial movement speeds on X an Y axis
         this.health = hp; // health points - not used yet
         this.bullets = []; // bullets fired by player
